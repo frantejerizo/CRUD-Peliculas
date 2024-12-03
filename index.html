@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Practica de operaciones del CRUD para un catalogo de peliculas"
+    />
+    <meta
+      name="keywords"
+      content="create, update, read, delete, module, localstorage"
+    />
+    <meta name="author" content="Tejerizo Francisco" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Catalogo Peliculas</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            >PELICULASGOATED.COM <i class="bi bi-camera-reels"></i>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/sobreNosotros.html"
+                  >Sobre Nosotros 😝</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="my-4 d-flex justify-content-between">
+        <h1>Catalogo Peliculas Disponibles</h1>
+        <button class="btn btn-primary">
+          <i class="bi bi-plus-circle"></i> Agregar Pelicula
+        </button>
+      </div>
+
+      <section class="mb-4 row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 g-4">
+      </section>
+    </main>
+
+    <footer class="bg-primary text-light text-center p-3">
+      <p>&copy; Todos los derechos reservados</p>
+    </footer>
+
+    <div
+      class="modal fade"
+      id="modalAgregarPelicula"
+      tabindex="-1"
+      aria-labelledby="modalAgregarPeliculaLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalAgregarPeliculaLabel">
+              Agregar Pelicula
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="peliculasForm">
+
+              <div class="mb-3">
+                <label for="titulo" class="form-label">Titulo:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="titulo"
+                  name="titulo"
+                  required
+                  minlength="2"
+                  maxlength="50"
+                />
+                <div class="valid-feedback">Cargaste bien el titulo</div>
+                <div class="invalid-feedback">
+                  El titulo debe tener entre 2 y 50 caracteres
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripcion:</label>
+                <textarea id="descripcion"
+                class="form-control"
+                required
+                minlength="20"
+                maxlength="400"
+                rows="4"
+                ></textarea>
+                <div class="valid-feedback">Cargaste bien la descripcion</div>
+                <div class="invalid-feedback">
+                  La descripcion debe tener entre 20 y 400 caracteres
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="director" class="form-label">Director:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="director"
+                  name="director"
+                  required
+                  minlength="2"
+                  maxlength="50"
+                />
+                <div class="valid-feedback">Cargaste bien el director</div>
+                <div class="invalid-feedback">
+                  El director debe tener entre 2 y 50 caracteres
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="anio" class="form-label">Año de Lanzamiento:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="anio"
+                  name="anio"
+                  required
+                  min="1895"
+                  max="2024"
+                />
+                <div class="valid-feedback">Cargaste bien el año</div>
+                <div class="invalid-feedback">
+                  El año de lanzamiento debe estar entre 1895 y 2024
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="genero" class="form-label">Género:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="genero"
+                  name="genero"
+                  required
+                  minlength="2"
+                  maxlength="50"
+                />
+                <div class="valid-feedback">Cargaste bien el genero</div>
+                <div class="invalid-feedback">
+                  El genero debe tener entre 2 y 50 caracteres
+                </div>
+              </div>  
+              
+              <div class="mb-3">
+                <label for="imagen" class="form-label">Link de la portada:</label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="imagen"
+                  name="imagen"
+                  required
+                />
+                <div class="valid-feedback">Cargaste bien la imagen</div>
+                <div class="invalid-feedback">
+                  la imagen debe tener formato url
+                </div>
+              </div> 
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="submit" class="btn btn-primary" form="peliculasForm">
+              Guardar Pelicula
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
+    <script src="./js/app.js" type="module"></script>
+  </body>
+</html>

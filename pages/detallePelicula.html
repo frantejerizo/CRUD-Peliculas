@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Practica de operaciones del CRUD para un catalogo de peliculas"
+    />
+    <meta
+      name="keywords"
+      content="create, update, read, delete, module, localstorage"
+    />
+    <meta name="author" content="Tejerizo Francisco" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Catalogo Peliculas</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html"
+            >PELICULASGOATED.COM <i class="bi bi-camera-reels"></i>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="./sobreNosotros.html"
+                  >Sobre Nosotros 😝</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+        
+        <div aria-label="breadcrumb" class="my-2">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
+              <li class="breadcrumb-item active" aria-current="page" id="breadCrumb"></li>
+            </ol>
+        </div>
+
+        <h1 class="m-3">Detalle de Pelicula:</h1>
+
+        <section>
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4" id="divImagenPelicula">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h4 class="card-title">Pelicula:</h4>
+                    <ul id="datosPelicula">
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-primary text-light text-center p-3">
+      <p>&copy; Todos los derechos reservados</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
+    <script src="../js/detallePelicula.js" type="module"></script>
+  </body>
+</html>
