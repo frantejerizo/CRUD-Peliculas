@@ -41,7 +41,7 @@ function agregarPelicula(e)
     e.preventDefault()
     if(booleanoCrearEditar === true)
     {
-        if(validarCaracteres(titulo,2,50) && validarCaracteres(descripcion,20,400) && validarCaracteres(director,2,50) && validarNumero(anio,1895,2024) && validarCaracteres(genero,2,50))
+        if(validarCaracteres(titulo,2,50) && validarCaracteres(descripcion,20,400) && validarCaracteres(director,2,50) && validarNumero(anio,1895,2024) && validarCaracteres(genero,2,50) && validarURL(imagen))
         {
             const nuevaPelicula = new Pelicula(titulo.value,descripcion.value,director.value,anio.value,genero.value,imagen.value)
 
