@@ -1,5 +1,5 @@
 import Pelicula from "./classPelicula.js";
-import {validarCaracteres, validarNumero} from "./validaciones.js"
+import {validarCaracteres, validarNumero, validarURL} from "./validaciones.js"
 
 const modalPeliculas = new bootstrap.Modal(document.getElementById("modalAgregarPelicula"))
 const btnAgregar = document.querySelector(".btn-primary")
